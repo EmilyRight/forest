@@ -1,0 +1,215 @@
+.section--tree {
+  background-color: #f9fafb;
+  position: relative;
+  &::after {
+    position: absolute;
+    z-index: 0;
+    content: "";
+    width: 50vw;
+    height: 40vw;
+    right: 5%;
+    top: -20vw;
+    border-radius: 50%;
+    background-color: #96e1a1;
+    filter: blur(8.5rem);
+  }
+  .section-layer {
+    padding-top: 7.8rem;
+  }
+  // .box-pic {
+  //   flex: 35%;
+  //   .pic-layer {
+  //     position: absolute;
+  //     &_tree {
+  //       bottom: 40%;
+  //       right: 0;
+  //       z-index: 2;
+  //       height: 50%;
+  //       img {
+  //         height: 50vw;
+  //         max-height: 60rem;
+  //       }
+  //     }
+  //     &_blured {
+  //       transform: scale(-1, 1);
+  //       top: 17%;
+  //       left: -3vw;
+  //       z-index: 1;
+  //       img {
+  //         height: 30vw;
+  //         max-height: 37rem;
+  //         filter: blur(0.7rem);
+  //       }
+  //     }
+  //   }
+  // }
+  .box-content {
+    display: flex;
+    flex-direction: column;
+
+    font-family: $font1;
+    width: auto;
+    max-width: 100%;
+    &__title {
+      margin: 0 0 4.6rem 0;
+    }
+    &__footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+      background: #ffffff;
+      padding: 2.4rem;
+      box-shadow: 0px 0.4rem 2rem rgba(0, 0, 0, 0.12);
+      border-radius: 1.2rem;
+    }
+  }
+  .block-footer {
+    &__text {
+      display: flex;
+      align-items: center;
+      max-width: 65%;
+      gap: 0.5rem;
+    }
+
+    &__subtitle {
+      margin: 0;
+      font-size: 2.2rem;
+      line-height: 1.27;
+    }
+    .btn {
+      max-height: 6rem;
+    }
+  }
+
+  .tree {
+    &__list {
+      display: flex;
+      list-style: none;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin: 0;
+      margin-bottom: 3.7rem;
+      padding: 0;
+    }
+
+    &__item {
+      border-radius: 1.2rem;
+      padding-top: 2.5rem;
+      margin-bottom: 3.3rem;
+      width: 45vw;
+      max-width: 45%;
+    }
+    &__item:last-child {
+      padding-top: 0rem;
+    }
+    &__img {
+      display: none;
+    }
+
+    &__title {
+      font-family: $font2;
+      font-weight: 700;
+      font-size: 7.2rem;
+      line-height: 1.22;
+      margin-bottom: 0.8rem;
+      p {
+        margin: 0;
+        padding: 0;
+        font-size: 2.2rem;
+        line-height: 1;
+      }
+    }
+    &__text-block {
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+    &__text {
+      font-size: 2.2rem;
+      line-height: 1.27;
+    }
+  }
+  .btn {
+    max-width: 21.5rem;
+  }
+  @media (max-width: 1254px) {
+    .tree {
+      &__title {
+        font-size: 5.2rem;
+      }
+    }
+  }
+  @media (max-width: 600px) {
+    &::after {
+      width: 60vw;
+      height: 50vw;
+      right: -5%;
+      top: -25vw;
+      border-radius: 50%;
+      background-color: #96e1a1;
+      filter: blur(6.5rem);
+    }
+    .section-layer {
+      padding-top: 3.6rem;
+      padding-bottom: 3.6rem;
+    }
+    .box-content {
+      max-width: 100%;
+      &__title {
+        text-align: left;
+        font-size: 2.8rem;
+        line-height: 1.29;
+        padding: 0;
+        margin: 0 0 2.4rem 0;
+      }
+    }
+    .tree {
+      &__list {
+        flex-direction: column;
+        margin-bottom: 1.8rem;
+      }
+      &__item {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 1.8rem;
+        padding-top: 0;
+      }
+      &__item:last-child {
+        margin-top: 0rem;
+      }
+      &__text {
+        font-size: 1.9rem;
+        line-height: 1.37;
+
+      }
+      &__title {
+        font-size: 3.8rem;
+        margin-bottom: 0.6rem;
+        p {
+          display: none;
+        }
+      }
+    }
+    .block-footer {
+      flex-direction: column;
+      padding: 1.8rem 1.2rem;
+      &__icon {
+        max-width: 3.6rem;
+      }
+      &__text {
+        max-width: 100%;
+        margin-bottom: 1.2rem;
+      }
+
+      &__subtitle {
+        margin: 0;
+        font-size: 1.6rem;
+        line-height: 1.38;
+      }
+    }
+  }
+}

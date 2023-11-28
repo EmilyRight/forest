@@ -1,0 +1,248 @@
+.section-feedback {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: -5%;
+  .feedback {
+    &__block {
+      border-radius: 1.2rem;
+      background: var(--white, #fff);
+      box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.12);
+      padding: 2.4rem 3.6rem;
+      position: relative;
+      overflow: hidden;
+      z-index: 100;
+    }
+
+    &__rating {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    &__text {
+      color: #000;
+      /* Headers Mobile/H1 */
+      font-family: $font2;
+      font-size: 2.8rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 3.6rem; /* 128.571% */
+      margin: 0;
+      max-width: 70%;
+    }
+
+    &__share {
+      position: absolute;
+      background-color: #fff;
+      width: 100%;
+      top: 0;
+      right: -100%;
+    }
+    &__share.visible {
+      position: absolute;
+      background-color: #fff;
+      width: 100%;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  .rating {
+    &__text {
+    }
+
+    &__line {
+      display: flex;
+      gap: 1rem;
+    }
+  }
+  .rating__line {
+    max-width: 25%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-end;
+    label svg {
+      transition: fill 0.4s;
+    }
+  }
+
+  .rating__line:not(:checked) > input {
+    display: none;
+  }
+  .rating__line label {
+    display: flex;
+    align-items: center;
+  }
+  .rating__line:not(:checked) > label {
+    width: 3.6rem;
+    cursor: pointer;
+  }
+
+  .rating__line > input:checked ~ label {
+    svg {
+      fill: #405b27;
+    }
+  }
+
+  .rating__line:not(:checked) > label:hover,
+  .rating__line:not(:checked) > label:hover ~ label {
+    svg {
+      fill: #405b27;
+    }
+  }
+
+  .rating__line > input:checked + label:hover,
+  .rating__line > input:checked + label:hover ~ label,
+  .rating__line > input:checked ~ label:hover,
+  .rating__line > input:checked ~ label:hover ~ label,
+  .rating__line > label:hover ~ input:checked ~ label {
+    svg {
+      fill: #405b27;
+    }
+  }
+
+  .share {
+    padding: 2.4rem 3.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    transition: 0.4s ease;
+
+    &__text {
+    }
+
+    &__links {
+      display: flex;
+      list-style: none;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    &__copy-link {
+      position: relative;
+    }
+    .copy-tooltip {
+      position: absolute;
+      background-color: transparent;
+      pointer-events: none;
+      bottom: -40%;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 0rem;
+      text-align: center;
+      font-family: $font1;
+      color: var(--gray-day-600, #65707b);
+      font-size: 1rem;
+      border-radius: 1.2rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 100%;
+      opacity: 0;
+      transition: 0.4s;
+      max-width: none;
+      &.opened {
+        opacity: 1;
+      }
+    }
+    &__icon {
+      &_vk {
+      }
+
+      &_ok {
+      }
+
+      &_tg {
+      }
+    }
+  }
+  .links {
+    &__item {
+      cursor: pointer;
+    }
+  }
+  .copy-icon {
+  }
+  .js-gtm-event {
+  }
+
+  @media (max-width: 600px) {
+    margin-top: -15%;
+    .feedback {
+      &__block {
+        padding: 1.9rem 2.4rem;
+      }
+
+      &__rating {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      &__text {
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+        text-align: center;
+        max-width: none;
+      }
+
+      &__share {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+    .rating {
+      &__text {
+      }
+
+      &__line {
+        width: 50%;
+        max-width: none;
+      }
+    }
+    .share {
+      padding: 1.5rem 2.4rem;
+      .copy-tooltip {
+        bottom: 15%;
+        left: -80%;
+      }
+      &__text {
+      }
+
+      &__links {
+        padding: 0;
+        gap: 1.2rem;
+      }
+
+      &__copy-link {
+      }
+
+      &__icon {
+        &_vk {
+        }
+
+        &_ok {
+        }
+
+        &_tg {
+        }
+      }
+    }
+    .links {
+      &__item {
+        max-width: 3.4rem;
+        img {
+          display: block;
+          max-width: 100%;
+        }
+      }
+    }
+
+    .js-gtm-event {
+    }
+  }
+}

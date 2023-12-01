@@ -1,16 +1,22 @@
 .section-feedback {
-  width: 80%;
+  min-width: 100%;
   margin: 0 auto;
-  margin-top: -5%;
+  position: relative;
   .feedback {
     &__block {
       border-radius: 1.2rem;
+      width: 80%;
+      max-width: 120rem;
       background: var(--white, #fff);
       box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.12);
       padding: 2.4rem 3.6rem;
       position: relative;
       overflow: hidden;
       z-index: 100;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
 
     &__rating {
@@ -74,6 +80,7 @@
   .rating__line label {
     display: flex;
     align-items: center;
+    -webkit-tap-highlight-color: transparent;
   }
   .rating__line:not(:checked) > label {
     width: 3.6rem;
@@ -149,6 +156,7 @@
       }
     }
     &__icon {
+      -webkit-tap-highlight-color: transparent;
       &_vk {
       }
 
@@ -170,7 +178,7 @@
   }
 
   @media (max-width: 600px) {
-    margin-top: -15%;
+    
     .feedback {
       &__block {
         padding: 1.9rem 2.4rem;

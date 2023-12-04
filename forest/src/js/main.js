@@ -115,7 +115,9 @@ function handleRating() {
   const shareBlock = document.querySelector('.share');
   inputsList.forEach((input) => {
     input.addEventListener('click', () => {
-      shareBlock.classList.add('visible');
+      setTimeout(() => {
+        shareBlock.classList.add('visible');
+      }, 1000);
     });
   });
 }
